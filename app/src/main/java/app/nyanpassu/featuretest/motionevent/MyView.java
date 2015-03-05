@@ -42,6 +42,8 @@ public class MyView extends View{
             mLog.v(TAG,"masked action : "+event.getActionMasked()+" , pointer count : "+event.getPointerCount()+" , pointer id : "+event.getPointerId(0));
         }
 
-        return super.dispatchTouchEvent(event);
+        super.dispatchTouchEvent(event);
+
+        return true;
     }
 }

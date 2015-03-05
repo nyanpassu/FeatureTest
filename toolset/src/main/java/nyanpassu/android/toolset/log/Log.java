@@ -14,11 +14,15 @@ public class Log {
         public void e(String tag, String message);
     }
 
+    /**
+     * 每一个带有Logger的对象可以实现这个接口以对外提供Logger
+     */
     public interface Logger {
         public Log getLog();
     }
 
-    int mLevel;
+    int mLevel = android.util.Log.VERBOSE;
+
     LogImpl mLogImpl;
 
     void setLogImpl(LogImpl logImpl) {
