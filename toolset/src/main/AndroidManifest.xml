@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="app.nyanpassu.toolset">
+    package="nyanpassu.android.toolset">
 
     <application android:allowBackup="true" android:label="@string/app_name">
 

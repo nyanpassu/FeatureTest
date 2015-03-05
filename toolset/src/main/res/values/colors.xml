@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="default_primary_dark">@color/light_blue_primary_dark</color>
+    <color name="default_primary_light">@color/light_blue_primary_light</color>
+    
+    <color name="indigo_primary_dark">#303F9F</color>
+    <color name="indigo_primary_light">#3F51B5</color>
+
+    <color name="light_blue_primary_dark">#0288D1</color>
+    <color name="light_blue_primary_light">#03A9F4</color>
+</resources>

@@ -1,1 +1,1 @@
-include ':app', ':toolset'
+include ':app', ':toolset', ':comparison'

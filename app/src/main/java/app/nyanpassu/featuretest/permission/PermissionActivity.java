@@ -1,38 +1,28 @@
-package app.nyanpassu.featuretest;
+package app.nyanpassu.featuretest.permission;
 
-import android.os.Bundle;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import nyanpassu.android.toolset.packagemanager.ActivityListFragment;
+import app.nyanpassu.featuretest.R;
 
-
-public class MainActivity extends ActionBarActivity {
+public class PermissionActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_permission);
 
-        ActivityListFragment fragment = new ActivityListFragment();
-        Bundle args = new Bundle();
-        args.putString(ActivityListFragment.ACTION, Constants.ACTION_MAIN);
-        fragment.setArguments(args);
-
-        getSupportFragmentManager()
-                .beginTransaction()
-                .add(R.id.activities_list,
-                        fragment,
-                        "activities_list")
-                .commit();
+        sendOrderedBroadcast(new Intent(),"");
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_permission, menu);
         return true;
     }
 

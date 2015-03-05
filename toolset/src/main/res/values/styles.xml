@@ -1,30 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="AppTheme.Base">
-        <!-- Customize your theme here. -->
-    </style>
-
     <style name="AppTheme.Base" parent="Theme.AppCompat">
         <!-- 状态栏颜色 -->
-        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorPrimaryDark">@color/default_primary_dark</item>
         <!-- ToolBar颜色 -->
-        <item name="colorPrimary">@color/primary_light</item>
+        <item name="colorPrimary">@color/default_primary_light</item>
         <!-- ToolBar文字颜色 -->
         <item name="android:textColorPrimary">@android:color/white</item>
         <!-- 窗口主题背景颜色 -->
         <item name="android:windowBackground">@android:color/white</item>
 
-        <item name="android:textViewStyle">@style/AppTheme.TextView</item>
-
         <!-- 禁用Title和ActionBar，使用布局中的Toolbar -->
         <item name="android:windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
     </style>
-
-
-    <style name="AppTheme.TextView" parent="android:Widget.TextView">
-        <item name="android:textColor">@android:color/black</item>
-    </style>
-
 </resources>

@@ -2,6 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="app.nyanpassu.featuretest" >
 
+    <permission
+        android:name="app.nyanpassu.featuretest.permission.TEST"
+        android:label="custom_permission_test"
+        android:permissionGroup="permission_test"
+        android:protectionLevel="normal" />
+
+    <uses-permission android:name="app.nyanpassu.featuretest.permission.TEST" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -15,6 +23,34 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".motionevent.InputEventConsistencyTestActivity"
+            android:label="@string/title_activity_input_event_consistency_test"
+            android:parentActivityName=".MainActivity" >
+            <intent-filter>
+                <action android:name="app.nyanpassu.featuretest.MAIN" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="app.nyanpassu.featuretest.MainActivity" />
+        </activity>
+        <activity
+            android:name=".permission.PermissionActivity"
+            android:label="@string/title_activity_permission"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="app.nyanpassu.featuretest.MainActivity" />
+        </activity>
+        <activity
+            android:name=".broadcast.BroadcastActivity"
+            android:label="@string/title_activity_broadcast"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="app.nyanpassu.featuretest.MainActivity" />
         </activity>
     </application>
 

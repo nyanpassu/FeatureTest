@@ -1,38 +1,37 @@
-package app.nyanpassu.featuretest;
+package app.nyanpassu.featuretest.motionevent;
 
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import nyanpassu.android.toolset.packagemanager.ActivityListFragment;
+import app.nyanpassu.featuretest.R;
+import nyanpassu.android.toolset.log.TextViewLogger;
+import butterknife.ButterKnife;
+import butterknife.InjectView;
 
+public class InputEventConsistencyTestActivity extends Activity {
 
-public class MainActivity extends ActionBarActivity {
+    @InjectView(R.id.logger)
+    TextViewLogger mTextViewLogger;
+
+    @InjectView(R.id.my_view)
+    MyView mMyView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_input_event_consistency_test);
+        ButterKnife.inject(this);
 
-        ActivityListFragment fragment = new ActivityListFragment();
-        Bundle args = new Bundle();
-        args.putString(ActivityListFragment.ACTION, Constants.ACTION_MAIN);
-        fragment.setArguments(args);
-
-        getSupportFragmentManager()
-                .beginTransaction()
-                .add(R.id.activities_list,
-                        fragment,
-                        "activities_list")
-                .commit();
+        mMyView.setLog(mTextViewLogger.getLog());
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_input_event_consistency_test, menu);
         return true;
     }
 

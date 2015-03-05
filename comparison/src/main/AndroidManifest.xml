@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="app.nyanpassu.comparison" >
+
+    <permission
+        android:name="app.nyanpassu.featuretest.permission.TEST"
+        android:label="custom_permission_test"
+        android:permissionGroup="permission_test"
+        android:protectionLevel="normal" />
+
+    <uses-permission android:name="app.nyanpassu.featuretest.permission.TEST" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

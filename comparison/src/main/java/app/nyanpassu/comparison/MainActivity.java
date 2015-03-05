@@ -1,31 +1,17 @@
-package app.nyanpassu.featuretest;
+package app.nyanpassu.comparison;
 
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import nyanpassu.android.toolset.packagemanager.ActivityListFragment;
 
-
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        ActivityListFragment fragment = new ActivityListFragment();
-        Bundle args = new Bundle();
-        args.putString(ActivityListFragment.ACTION, Constants.ACTION_MAIN);
-        fragment.setArguments(args);
-
-        getSupportFragmentManager()
-                .beginTransaction()
-                .add(R.id.activities_list,
-                        fragment,
-                        "activities_list")
-                .commit();
     }
 
 
