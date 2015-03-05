@@ -5,6 +5,7 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
+import nyanpassu.android.toolset.log.AndroidLog;
 import nyanpassu.android.toolset.log.Log;
 
 /**
@@ -38,12 +39,19 @@ public class MyView extends View{
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
-        if (mLog!=null){
-            mLog.v(TAG,"masked action : "+event.getActionMasked()+" , pointer count : "+event.getPointerCount()+" , pointer id : "+event.getPointerId(0));
-        }
+
+        AndroidLog.v(TAG, "dispatch touch event . masked action : " + event.getActionMasked() + " , pointer count : " + event.getPointerCount() + " , pointer id : " + event.getPointerId(0));
 
         super.dispatchTouchEvent(event);
 
         return true;
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+
+        AndroidLog.v(TAG, "on touch event . masked action : " + event.getActionMasked() + " , pointer count : " + event.getPointerCount() + " , pointer id : " + event.getPointerId(0));
+
+        return super.onTouchEvent(event);
     }
 }

@@ -7,11 +7,14 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import nyanpassu.android.toolset.layout.MeasureTool;
+import nyanpassu.android.toolset.log.AndroidLog;
 
 /**
  * Created by 丢猫 on 2015/3/5.
  */
 public class MyViewGroup extends ViewGroup {
+
+    public static final String TAG = "MyViewGroup";
 
     public MyViewGroup(Context context) {
         super(context);
@@ -36,16 +39,25 @@ public class MyViewGroup extends ViewGroup {
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
+
+        AndroidLog.v(TAG, "dispatch touch event . masked action : " + event.getActionMasked() + " , pointer count : " + event.getPointerCount() + " , pointer id : " + event.getPointerId(0));
+
         return super.dispatchTouchEvent(event);
     }
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent event) {
+
+        AndroidLog.v(TAG, "on intercept touch event . masked action : " + event.getActionMasked() + " , pointer count : " + event.getPointerCount() + " , pointer id : " + event.getPointerId(0));
+
         return super.onInterceptTouchEvent(event);
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
+
+        AndroidLog.v(TAG, "on touch event . masked action : " + event.getActionMasked() + " , pointer count : " + event.getPointerCount() + " , pointer id : " + event.getPointerId(0));
+
         return super.onTouchEvent(event);
     }
 
